@@ -48,3 +48,27 @@ class PartTimeWage{
 }
 }
 
+#UC-4
+class SwitchCaseWage{
+        public static void main(String args[]){
+                int check=(int)(Math.floor(Math.random()*10)%2);
+                int salary=0;
+                int empRatePerHour=20;
+                int empHours;
+                switch(check){
+                case 0 :
+                        empHours=4;
+                        break;
+                case 1 :
+                        empHours=8;
+                        break;
+                default :
+                        empHours=0;
+                }
+                salary=empRatePerHour*empHours;
+                 System.out.println(salary);
+}
+}
+
+
+

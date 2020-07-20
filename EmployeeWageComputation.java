@@ -97,6 +97,42 @@ class WageForMonth{
 }
 }
 
+#UC-6
+class WagesTillCondition{
+        int hours;
+        int days;
+        int salary;
+        int empRatePerHour=20;
+        int empHours;
+        int totalSalary;
+private int calculateSalary(int h,int d){
+         while(hours<=h && days<=d){
+              int check=(int)(Math.floor(Math.random()*10)%2);
+                switch(check){
+                case 0 :
+                        empHours=4;
+                        break;
+                case 1 :
+                        empHours=8;
+                        break;
+                default :
+                        empHours=0;
+                }
+                hours+=empHours;
+                days+=1;
+                salary=empRatePerHour*empHours;
+                totalSalary=totalSalary+salary;
+  }
+                return totalSalary;
+}
+public static void main(String args[]){
+                int totalHours=100;
+                int totalDays=20;
+                WagesTillCondition con=new WagesTillCondition();
+                int wage=con.calculateSalary(totalHours,totalDays);
+                System.out.println(wage);
+}
+}
 
 
 

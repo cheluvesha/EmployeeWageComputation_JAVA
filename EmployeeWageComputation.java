@@ -99,20 +99,24 @@ class WageForMonth{
 
 #UC-6
 class WagesTillCondition{
-        int hours;
-        int days;
-        int salary;
+        final static int isPartTime=0;
+        final static int isFullTime=1;
+public static void main(String args[]){
+        int hours=0;
+        int days=0;
+        int salary=0;
         int empRatePerHour=20;
-        int empHours;
-        int totalSalary;
-private int calculateSalary(int h,int d){
-         while(hours<=h && days<=d){
+        int empHours=0;
+        int totalSalary=0;
+        int totalHours=100;
+        int totalDays=20;
+        while(hours<=totalHours && days<totalDays){
               int check=(int)(Math.floor(Math.random()*10)%2);
                 switch(check){
-                case 0 :
+                case isPartTime:
                         empHours=4;
                         break;
-                case 1 :
+                case isFullTime:
                         empHours=8;
                         break;
                 default :
@@ -123,16 +127,8 @@ private int calculateSalary(int h,int d){
                 salary=empRatePerHour*empHours;
                 totalSalary=totalSalary+salary;
   }
-                return totalSalary;
-}
-public static void main(String args[]){
-                int totalHours=100;
-                int totalDays=20;
-                WagesTillCondition con=new WagesTillCondition();
-                int wage=con.calculateSalary(totalHours,totalDays);
-                System.out.println(wage);
+                System.out.println(totalSalary);
 }
 }
-
 
 

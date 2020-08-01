@@ -50,16 +50,18 @@ class PartTimeWage{
 
 #UC-4
 class SwitchCaseWage{
+        final static int isPartTime=0;
+        final static int isFullTime=1;
         public static void main(String args[]){
                 int check=(int)(Math.floor(Math.random()*10)%2);
                 int salary=0;
                 int empRatePerHour=20;
                 int empHours;
                 switch(check){
-                case 0 :
+                case isPartTime :
                         empHours=4;
                         break;
-                case 1 :
+                case isFullTime :
                         empHours=8;
                         break;
                 default :
@@ -72,7 +74,9 @@ class SwitchCaseWage{
 
 #UC-5
 class WageForMonth{
-        public static void main(String args[]){
+        final static int isPartTime=0;
+        final static int isFullTime=1;
+public static void main(String args[]){
                 int salary=0;
                 int empRatePerHour=20;
                 int empHours;
@@ -81,17 +85,17 @@ class WageForMonth{
                 for(int day=1;day<=numberOfWorkingDays;day++){
                 int check=(int)(Math.floor(Math.random()*10)%2);
                 switch(check){
-                case 0 :
+                case isPartTime:
                         empHours=4;
                         break;
-                case 1 :
+                case isFullTime :
                         empHours=8;
                         break;
                 default :
                         empHours=0;
                 }
                 salary=empRatePerHour*empHours;
-                totalSalary=+salary;
+                totalSalary+=salary;
                  }
                 System.out.println("Total wage for 20 days: "+totalSalary);
 }
@@ -104,9 +108,9 @@ class WagesTillCondition{
 public static void main(String args[]){
         int hours=0;
         int days=0;
-        int salary=0;
+        int salary;
         int empRatePerHour=20;
-        int empHours=0;
+        int empHours;
         int totalSalary=0;
         int totalHours=100;
         int totalDays=20;

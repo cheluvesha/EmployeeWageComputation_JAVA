@@ -50,16 +50,18 @@ class PartTimeWage{
 
 #UC-4
 class SwitchCaseWage{
+        final static int isPartTime=0;
+        final static int isFullTime=1
         public static void main(String args[]){
                 int check=(int)(Math.floor(Math.random()*10)%2);
                 int salary=0;
                 int empRatePerHour=20;
                 int empHours;
                 switch(check){
-                case 0 :
+                case isPartTime :
                         empHours=4;
                         break;
-                case 1 :
+                case isFullTime :
                         empHours=8;
                         break;
                 default :
@@ -72,7 +74,9 @@ class SwitchCaseWage{
 
 #UC-5
 class WageForMonth{
-        public static void main(String args[]){
+        final static int isPartTime=0;
+        final static int isFullTime=1;
+public static void main(String args[]){
                 int salary=0;
                 int empRatePerHour=20;
                 int empHours;
@@ -81,58 +85,20 @@ class WageForMonth{
                 for(int day=1;day<=numberOfWorkingDays;day++){
                 int check=(int)(Math.floor(Math.random()*10)%2);
                 switch(check){
-                case 0 :
+                case isPartTime:
                         empHours=4;
                         break;
-                case 1 :
+                case isFullTime :
                         empHours=8;
                         break;
                 default :
                         empHours=0;
                 }
                 salary=empRatePerHour*empHours;
-                totalSalary=+salary;
+                totalSalary+=salary;
                  }
                 System.out.println("Total wage for 20 days: "+totalSalary);
 }
 }
-
-#UC-6
-class WagesTillCondition{
-        int hours;
-        int days;
-        int salary;
-        int empRatePerHour=20;
-        int empHours;
-        int totalSalary;
-private int calculateSalary(int h,int d){
-         while(hours<=h && days<=d){
-              int check=(int)(Math.floor(Math.random()*10)%2);
-                switch(check){
-                case 0 :
-                        empHours=4;
-                        break;
-                case 1 :
-                        empHours=8;
-                        break;
-                default :
-                        empHours=0;
-                }
-                hours+=empHours;
-                days+=1;
-                salary=empRatePerHour*empHours;
-                totalSalary=totalSalary+salary;
-  }
-                return totalSalary;
-}
-public static void main(String args[]){
-                int totalHours=100;
-                int totalDays=20;
-                WagesTillCondition con=new WagesTillCondition();
-                int wage=con.calculateSalary(totalHours,totalDays);
-                System.out.println(wage);
-}
-}
-
 
 
